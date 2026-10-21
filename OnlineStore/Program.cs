@@ -31,6 +31,7 @@ namespace OnlineStore
             List<Product> inStockProducts = productSearch.SearchProducts(catalog, p => p.Stock > 0);
             List<Product> clothingProducts = productSearch.SearchProducts(catalog, p => p.Category == "Clothing" && p.Price < 100);
             #endregion
+
         }
     }
 }
