@@ -39,6 +39,14 @@ namespace OnlineStore
             PrintProducts.PrintProductList("Clothing Under 100$", clothingProducts);
             #endregion
 
+            #region Print Reports
+            Console.WriteLine("\n------------Short Report------------------\n");
+            PrintReports.PrintReport(catalog, P => Console.WriteLine($"{P.Name} - ${P.Price}"));
+            Console.WriteLine("\n --------------Detailed Report-----------------\n");
+            PrintReports.PrintReport(catalog, p => Console.WriteLine($"[{p.Category}] {p.Name} | Price : ${p.Price} | Stock : {p.Stock}"));
+
+            #endregion
+
         }
     }
 }
