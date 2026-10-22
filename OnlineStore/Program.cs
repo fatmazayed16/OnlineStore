@@ -47,6 +47,22 @@ namespace OnlineStore
 
             #endregion
 
+            #region Transform Products 
+            List<string> stringProduct = PrintReports.TransformProducts(catalog, p => $"{p.Name}  $({p.Price})");
+            Console.WriteLine("\n --------------Summary List-----------------\n");
+            foreach (string product in stringProduct)
+            {
+                Console.WriteLine(product);
+            }
+
+            List<string> priceLable = PrintReports.TransformProducts(catalog , p=> p.Price> 100 ? $"{p.Name} : Expensive!" : $"{p.Name}: Affordable");
+            Console.WriteLine("\n --------------Price Labels-----------------\n");
+            foreach (string label in priceLable)
+            {
+                Console.WriteLine(label);
+            }
+            #endregion
+
         }
     }
 }
