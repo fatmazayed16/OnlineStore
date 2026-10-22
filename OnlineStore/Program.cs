@@ -25,17 +25,16 @@ namespace OnlineStore
             #endregion
 
             #region Search Method
-            ProductSearch productSearch = new ProductSearch();
-            List<Product> electronics = productSearch.SearchProducts (catalog, p => p.Category == "Electronics");
+            List<Product> electronics = ProductSearch.SearchProducts (catalog, p => p.Category == "Electronics");
             PrintProducts.PrintProductList("Electronics", electronics);
 
-            List<Product> cheaperProducts = productSearch.SearchProducts(catalog, p => p.Price < 50);
+            List<Product> cheaperProducts = ProductSearch.SearchProducts(catalog, p => p.Price < 50);
             PrintProducts.PrintProductList("Under 50$", cheaperProducts);
 
-            List<Product> inStockProducts = productSearch.SearchProducts(catalog, p => p.Stock > 0);
+            List<Product> inStockProducts = ProductSearch.SearchProducts(catalog, p => p.Stock > 0);
             PrintProducts.PrintProductList("In Stock", inStockProducts);
 
-            List<Product> clothingProducts = productSearch.SearchProducts(catalog, p => p.Category == "Clothing" && p.Price < 100);
+            List<Product> clothingProducts = ProductSearch.SearchProducts(catalog, p => p.Category == "Clothing" && p.Price < 100);
             PrintProducts.PrintProductList("Clothing Under 100$", clothingProducts);
             #endregion
 
