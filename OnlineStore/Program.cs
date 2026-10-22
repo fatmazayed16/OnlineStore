@@ -63,6 +63,16 @@ namespace OnlineStore
             }
             #endregion
 
+            #region Filter Products
+            List<Product> lowStock  = ProductSearch.FilterProducts(catalog, p=> p.Stock < 20);
+
+            Console.WriteLine("\n------------Low-Stock Alert------------\n");
+            foreach(Product product1 in lowStock)
+            {
+                Console.WriteLine($"[LOW STOCK] {product1.Name}: only {product1.Stock} left!");
+            }
+            #endregion
+
         }
     }
 }
